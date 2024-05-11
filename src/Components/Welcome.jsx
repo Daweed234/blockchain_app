@@ -21,6 +21,10 @@ const Input= ({ placeholder, name, type, value, handleChange }) => {
 const Welcome = () => {
   const connectWallet = () => {};
 
+  const handleSubmit = () =>{
+
+  }
+
   return (
     <div className="flex w-full justify-center items-center">
       <div className=" flex flex-row md:flex-col items-start justify-between md:p-20 py-12 px-4">
@@ -63,7 +67,7 @@ const Welcome = () => {
                 <p className="text-white font-semibold text-lg mt-1">
                   Ethereum
                 </p>
-                
+
               </div>
             </div>
           </div>
@@ -73,6 +77,26 @@ const Welcome = () => {
           <input placeholder="Amount (ETH)" name="amount" type="number" handleChange={() => {}} />
           <input placeholder="KeyWord (GIF)" name="keyword" type="text" handleChange={() => {}} />
           <input placeholder="Enter Message" name="message" type="text" handleChange={() => {}} />
+
+        <div className="h-[1px] w-full bg-gray-400 my-2">
+
+          {false ? 
+          (<Loader />
+        )
+          :(
+            <button
+            type="button"
+            onClick={handleSubmit}
+            className="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] rounded-md cursor-pointer"
+            >
+Send Now
+            </button>
+          )
+
+          }
+
+        </div>
+
           </div>
 
         </div>
