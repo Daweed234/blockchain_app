@@ -20,11 +20,13 @@ contract Transaction{
     function addToBlockchain ( address payable receiver, uint amount, stirng memory message, string memory keyword ) public {
         transaction += 1;        
         transaction.push(TransferStruct(msg.sender, receiver, amount, message, block.timestamp, keyword));
+
+        emit.Transfer(msg.sender, receiver, amount, message, block.timestamp, keyword);
     }
     function getAllTransactions () public view returns (TransferStruct[] memory) {
-        
+        return transactions;
     }
     function getTransactionCount () public view returns (uints256) {
-        
+     return transactionCount;   
     }
 }
